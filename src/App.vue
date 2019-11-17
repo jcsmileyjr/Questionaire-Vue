@@ -1,28 +1,45 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <!--@nextQuestion is sending a method as a prop -->
+    <!--v-bind or :currentQuetion is sending a question a a prop -->
+    <Questions @nextQuestion= "nextQuestion" v-bind:currentQuestion= questions[currentSpot] />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Questions from '@/components/Questions.vue';
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    Questions
+  },
+  //Similar to React state
+  data(){
+    return{
+      //array of questions
+      questions:[
+        "What is the difference in 'Let' and 'Const'",
+        "What is the difference in '=' and '==' and '==='",
+        "What is a JSON",
+        "What is a variable",
+      ],
+      //current question index
+      currentSpot:0,
+    }
+  },
+  methods:{
+    //function to be passed down as a prop to update the current index in the array of questions
+    nextQuestion(){
+      if(this.currentSpot == this.questions.length-1){
+        this.currentSpot = 0;
+      }else {
+        this.currentSpot ++;
+      }      
+    }
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>

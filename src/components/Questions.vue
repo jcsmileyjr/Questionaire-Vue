@@ -1,10 +1,12 @@
 <template>
     <div id="questions">
+        <section>
         <h1>JavaScript Interview Questions</h1>
         <!-- prop pass down from parent component -->
         <h3>{{currentQuestion}}</h3>
         <!-- click event that call a function -->
         <button @click="getNextQuestion">Next</button>
+        </section>
     </div>
 </template>
 
@@ -28,18 +30,25 @@ export default {
 
 <style scoped>
     #questions {
-        text-align: center;
-    }
-
-    div {
         
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        text-align: center;
         min-height: 100vh;
+        background-color:#6A5555;
 
+    }
+
+    section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-color: white;
+        height: 50vh;
+        width: 80vh;
     }
 
     h1 {
@@ -47,9 +56,10 @@ export default {
     }
 
     button {
-        background-color: lightslategray;
+        background-color: green;
         font-size: 1.5rem;
+        border: 1px solid green;
         border-radius: 5px; /*round out the corners of the button*/
-    box-shadow: 1px 2px grey; /*shadow under the button*/
+        box-shadow: 2px 3px 4px grey; /*shadow under the button*/
     }
 </style>

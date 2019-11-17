@@ -19,10 +19,10 @@ export default {
     return{
       //array of questions
       questions:[
-        "What is the difference in 'Let' and 'Const'",
-        "What is the difference in '=' and '==' and '==='",
-        "What is a JSON",
-        "What is a variable",
+        "What is the difference in 'Let' and 'Const'?",
+        "What is the difference in '=' and '==' and '==='?",
+        "What is a JSON?",
+        "What is a variable?",
       ],
       //current question index
       currentSpot:0,
